@@ -13,8 +13,8 @@ const Video = () => {
     <section className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="We are ready to help"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Explore workflows demo video"
+          paragraph="Watch our demo video to explore MedScanOCR in action, showcasing its seamless customization of workflows tailored to the specific needs of medical professionals. Simplify and streamline information management with ease"
           center
           mb="80px"
         />
