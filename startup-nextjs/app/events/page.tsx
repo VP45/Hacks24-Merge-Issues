@@ -16,10 +16,10 @@ const Events = () => {
     return (
         <>
             <div
-                className="ae-embed-plugin"
+                className="ae-embed-plugin mt-24"
                 data-type="city"
                 data-cityname="Mumbai"
-                data-category="Health & Welness"
+                data-category="Health and wellness"
                 data-sort={0}
                 data-header={1}
             ></div>

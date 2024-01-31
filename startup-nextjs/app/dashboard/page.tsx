@@ -13,7 +13,7 @@ import Image from "next/image"
 
 const Dashboard = () => {
     return (
-        <section className="container flex justify-between h-screen mt-28">
+        <section className="container flex justify-between h-screen mt-24 pt-5">
             <div className="w-[40%] border-r">
                 <div className="flex items-center gap-3">
                     <div>
@@ -28,13 +28,13 @@ const Dashboard = () => {
                     <h3 className="text-lg font-medium">Swapnil Vishwakarma</h3>
                 </div>
                 <div className="mt-3 text-body-color">
-                    <p><span className="font-medium text-black">DOB : </span>18 aug 2003</p>
-                    <p><span className="font-medium text-black">Gender : </span>Male</p>
+                    <p><span className="font-medium text-black dark:text-white">DOB : </span>18 aug 2003</p>
+                    <p><span className="font-medium text-black dark:text-white">Gender : </span>Male</p>
                     {/* <p><span className="font-medium text-black">Phone : </span>1234567890</p> */}
                 </div>
             </div>
             
-            <div className="w-full">
+            <div className="w-full ml-1">
                 <div className="flex items-center justify-between mx-3">
                     <h3 className="font-medium">Medical History</h3>
                 <Button variant="outline">Button</Button>
