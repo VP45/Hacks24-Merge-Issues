@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 import { workouts } from "./workoutsData";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import ExerciseCard from "./ExerciseCard";
 

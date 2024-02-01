@@ -11,6 +11,9 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 
+import { FaDumbbell } from "react-icons/fa";
+import { GiCursedStar } from "react-icons/gi";
+
 import Image from "next/image";
 import { useContext } from "react";
 import { OcrContext } from "@/context/OcrContext";
@@ -18,6 +21,7 @@ import DoctorDashboard from "@/components/Patients/DoctorDashboard";
 import { useUser, useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import UploadDialog from "@/components/Upload/UploadDialog";
+import Link from "next/link";
 
 const Dashboard = () => {
   const { userType } = useContext(OcrContext);
@@ -26,10 +30,10 @@ const Dashboard = () => {
   const router = useRouter();
 
   if (!isLoaded || !isSignedIn || !userId) {
-    router.push('/signin');
+    router.push("/signin");
   }
 
-  // console.log(user)
+  console.log(userId);
   return (
     <>
       {userType === "doctor" ? (
@@ -49,21 +53,38 @@ const Dashboard = () => {
               <p className="text-sm text-gray-600">
                 {user?.primaryEmailAddress?.emailAddress}
               </p>
+              <div className="ml-5 mt-3 text-body-color">
+                <p>
+                  <span className="font-medium text-black dark:text-white">
+                    DOB :{" "}
+                  </span>
+                  18 aug 2003
+                </p>
+                <p>
+                  <span className="font-medium text-black dark:text-white">
+                    Gender :{" "}
+                  </span>
+                  Male
+                </p>
+                {/* <p><span className="font-medium text-black">Phone : </span>1234567890</p> */}
+              </div>
             </div>
-            <div className="mt-3 ml-5 text-body-color">
-              <p>
-                <span className="font-medium text-black dark:text-white">
-                  DOB :{" "}
-                </span>
-                18 aug 2003
-              </p>
-              <p>
-                <span className="font-medium text-black dark:text-white">
-                  Gender :{" "}
-                </span>
-                Male
-              </p>
-              {/* <p><span className="font-medium text-black">Phone : </span>1234567890</p> */}
+
+            <div className="mx-10 flex flex-col border p-5 mt-5 rounded">
+              <Link href="/recommendation">
+                <div className="mb-3 me-2 flex flex-col items-center rounded-lg bg-primary px-5 py-5 text-center text-sm font-medium text-white hover:bg-blue-500 focus:outline-none focus:ring-4 focus:ring-[#2557D6]/50 dark:focus:ring-[#2557D6]/50 hover:scale-105">
+                  <GiCursedStar size={40} />
+                  <p className="text-xl">Recommendation</p>
+                </div>
+              </Link>
+              <Link href="/exercise">
+                <div
+                  className="mb-2 me-2 flex flex-col items-center rounded-lg border border-primary bg-white px-5 py-5 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200 dark:focus:ring-gray-800 hover:scale-105"
+                >
+                  <FaDumbbell size={40} className="text-primary" />
+                  <p className="text-xl text-primary">Exercise</p>
+                </div>
+              </Link>
             </div>
           </div>
 

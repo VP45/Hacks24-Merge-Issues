@@ -8,7 +8,7 @@ const ExerciseCard = ({ exercise }) => {
           <Image src={exercise.link} alt={exercise.name} width={250} height={300} className="" />
         </div>
 
-        <div className="mx-4 flex aspect-square w-64 flex-col justify-center rounded-full border-8 border-solid border-white bg-[#c759ff] p-2 shadow-md">
+        <div className="mx-4 flex aspect-square w-64 flex-col justify-center rounded-full border-8 border-solid border-white bg-primary p-2 shadow-md">
           {exercise.sets != 0 ? (
             <>
               <div>
@@ -37,7 +37,7 @@ const ExerciseCard = ({ exercise }) => {
           )}
         </div>
       </div>
-      <div className="rounded-lg bg-[#c759ff] p-4">
+      <div className="rounded-lg bg-primary p-4">
         <p className="text-2xl font-bold tracking-wider text-white">
           {exercise.name}
         </p>
