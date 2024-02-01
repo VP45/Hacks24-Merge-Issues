@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useContext } from "react";
 import { OcrContext } from "@/context/OcrContext";
 
-export default function Page() {
+export default function SignInPage() {
   const { setUserType } = useContext(OcrContext);
   return (
     <section className="bg-gray-300 dark:bg-black">

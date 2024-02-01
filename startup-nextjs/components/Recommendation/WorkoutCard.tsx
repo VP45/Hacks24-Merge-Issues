@@ -30,8 +30,7 @@ const WorkoutCard: React.FC<WorkoutCardProps> = ({ name, description, url, icon 
                     className="min-w-[40px] text-white bg-violet-500 hover:scale-105 ease-in-out duration-300 p-2 m-4 rounded-lg shadow-md shadow-violet-700"
                     onClick={() => {
                         // add the nextPage prop as a variable to the navigate
-                        router.push(`/exercise/stretching?nextPage=${url}`);
-
+                        router.push(`/exercise/`);
                     }}
                 >
                     Start

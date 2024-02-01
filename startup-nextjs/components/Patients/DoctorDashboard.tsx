@@ -121,12 +121,12 @@ const DoctorDashboard = (props: Props) => {
               width={100}
               height={100}
               className="mx-auto h-24 w-24 rounded-full border-2 border-black"
-              src="https://ui-avatars.com/api/?name=Swapnil+Vishwakarma&random=true"
+              src={`https://ui-avatars.com/api/?name=${user?.fullName}&random=true`}
               alt="Swapnil Vishwakarma"
             />
-            <p className="pt-2 text-lg font-semibold">Swapnil Vishwakarma</p>
+            <p className="pt-2 text-lg font-semibold">{user?.fullName}</p>
             <p className="text-sm text-gray-600">
-              {user.primaryEmailAddress.emailAddress}
+              {user?.primaryEmailAddress.emailAddress}
             </p>
             <div className="mt-5">
               <a

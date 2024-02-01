@@ -15,14 +15,18 @@ import Image from "next/image";
 import { useContext } from "react";
 import { OcrContext } from "@/context/OcrContext";
 import DoctorDashboard from "@/components/Patients/DoctorDashboard";
-import { useUser } from "@clerk/nextjs";
+import { useUser, useAuth } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+import UploadDialog from "@/components/Upload/UploadDialog";
 
 const Dashboard = () => {
   const { userType } = useContext(OcrContext);
-  const { isLoaded, isSignedIn, user } = useUser();
+  const { isSignedIn, user } = useUser();
+  const { isLoaded, userId } = useAuth();
+  const router = useRouter();
 
-  if (!isLoaded || !isSignedIn) {
-    return null;
+  if (!isLoaded || !isSignedIn || !userId) {
+    router.push('/signin');
   }
 
   // console.log(user)
@@ -38,15 +42,15 @@ const Dashboard = () => {
                 width={100}
                 height={100}
                 className="mx-auto h-24 w-24 rounded-full border-2 border-black"
-                src="https://ui-avatars.com/api/?name=Swapnil+Vishwakarma&random=true"
+                src={`https://ui-avatars.com/api/?name=${user?.fullName}&random=true`}
                 alt="Swapnil Vishwakarma"
               />
-              <p className="pt-2 text-lg font-semibold">Swapnil Vishwakarma</p>
+              <p className="pt-2 text-lg font-semibold">{user?.fullName}</p>
               <p className="text-sm text-gray-600">
-                {user.primaryEmailAddress.emailAddress}
+                {user?.primaryEmailAddress?.emailAddress}
               </p>
             </div>
-            <div className="mt-3 text-body-color">
+            <div className="mt-3 ml-5 text-body-color">
               <p>
                 <span className="font-medium text-black dark:text-white">
                   DOB :{" "}
@@ -66,7 +70,7 @@ const Dashboard = () => {
           <div className="ml-1 w-full">
             <div className="mx-3 flex items-center justify-between">
               <h3 className="font-medium">Medical History</h3>
-              <Button variant="outline">Button</Button>
+              <UploadDialog />
             </div>
             <Table className="mt-2 border">
               <TableCaption>A list of your recent invoices.</TableCaption>
