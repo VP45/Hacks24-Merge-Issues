@@ -20,7 +20,7 @@ const Exercise = () => {
           prevent injuries.
         </p>
         <div>
-          <Link href="/exercise/stretching">
+          <Link href="/exercise/exercise-forms">
             <button
               className="rounded bg-primary px-6 py-3 text-sm font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:scale-105 hover:shadow-md focus:outline-none active:bg-violet-600"
               type="button"

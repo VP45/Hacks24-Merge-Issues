@@ -1,11 +1,17 @@
 import Image from "next/image";
 
-const ExerciseCard = ({ exercise }) => {
+const ExerciseCard = ({ exercise, index }) => {
   return (
-    <div className="rounded-md m-4 flex w-full flex-col gap-4 bg-gray-200 p-4 shadow-md md:max-w-[640px]">
+    <div className="m-4 flex w-full flex-col gap-4 rounded-md bg-gray-200 p-4 shadow-md md:max-w-[640px]">
       <div className="mx-auto grid grid-cols-1 items-center justify-center gap-4 px-8 py-4 text-center md:grid-cols-2">
         <div className="aspect-square w-full rounded-md p-2 shadow-md">
-          <Image src={exercise.link} alt={exercise.name} width={250} height={300} className="" />
+          <img
+            src={exercise.link}
+            alt={exercise.name}
+            // width={250}
+            // height={300}
+            className=""
+          />
         </div>
 
         <div className="mx-4 flex aspect-square w-64 flex-col justify-center rounded-full border-8 border-solid border-white bg-primary p-2 shadow-md">

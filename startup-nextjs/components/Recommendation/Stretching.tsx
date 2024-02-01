@@ -8,7 +8,7 @@ import ExerciseCard from "./ExerciseCard";
 
 const Stretching: React.FC = () => {
     const router = useRouter();
-    const { nextPage } = router.query;
+    // const { nextPage } = router.query;
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -60,7 +60,7 @@ const Stretching: React.FC = () => {
                         Next
                     </button>
                 </div>
-                <div className="mb-4">
+                {/* <div className="mb-4">
                     {currentIndex >= exercises.length - 1 ? (
                         <Link href={`/exercise/${nextPage}`}>
                             <a>
@@ -73,7 +73,7 @@ const Stretching: React.FC = () => {
                             </a>
                         </Link>
                     ) : null}
-                </div>
+                </div> */}
             </div>
         </>
     );

@@ -117,9 +117,9 @@ const DoctorDashboard = (props: Props) => {
       <div className="w-[40%] min-w-[300px] max-w-[400px] rounded-md border border-[#e5e7eb]">
         <div className="h-full overflow-hidden rounded bg-white shadow-lg">
           <div className="border-b p-6  text-center">
-            <Image
-              width={100}
-              height={100}
+            <img
+              // width={100}
+              // height={100}
               className="mx-auto h-24 w-24 rounded-full border-2 border-black"
               src={`https://ui-avatars.com/api/?name=${user?.fullName}&random=true`}
               alt="Swapnil Vishwakarma"

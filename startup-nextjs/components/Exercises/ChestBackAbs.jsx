@@ -1,7 +1,8 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 
-import ExerciseCard from '../../components/ExerciseCard';
-import { workouts } from '../../workoutsData';
+import ExerciseCard from "../Recommendation/ExerciseCard";
+import { workouts } from "../Recommendation/workoutsData";
 
 const ChestBackAbs = () => {
   const exercises = workouts.chestBackAbs;

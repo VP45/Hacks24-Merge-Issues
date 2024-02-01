@@ -21,6 +21,41 @@ const nextConfig = {
         hostname: "ui-avatars.com",
         port: "",
       },
+    ], 
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "fitnessprogramer.com",
+        port: "",
+      },
+    ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.inspireusafoundation.org",
+        port: "",
+      },
+    ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "sporium.net",
+        port: "",
+      },
+    ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "liftingfaq.com",
+        port: "",
+      },
+    ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "newlife.com.cy",
+        port: "",
+      },
     ],
   },
 };

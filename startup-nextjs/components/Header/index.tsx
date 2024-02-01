@@ -59,7 +59,7 @@ const Header = () => {
                 } `}
               >
                 <Image
-                  src="/images/logo/logo-2.svg"
+                  src="/images/main-logo.png"
                   alt="logo"
                   width={140}
                   height={30}
@@ -179,7 +179,11 @@ const Header = () => {
                   </div>
                 </div>
               ) : (
-                <UserButton afterSignOutUrl="/" />
+                <div className="flex items-center gap-5">
+                  <UserButton afterSignOutUrl="/" />
+
+                  <ThemeToggler />
+                </div>
               )}
             </div>
           </div>

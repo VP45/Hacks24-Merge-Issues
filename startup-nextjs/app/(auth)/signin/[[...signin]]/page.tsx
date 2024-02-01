@@ -8,7 +8,7 @@ import { OcrContext } from "@/context/OcrContext";
 export default function SignInPage() {
   const { setUserType } = useContext(OcrContext);
   return (
-    <section className="bg-gray-300 dark:bg-black">
+    <section className="bg-gray-300 dark:bg-black mt-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="pb-6 pt-12 md:pb-20 md:pt-20">
           {/* Page header */}

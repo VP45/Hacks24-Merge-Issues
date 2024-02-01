@@ -16,10 +16,14 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useUser, useAuth } from "@clerk/nextjs";
+
 
 const UploadForm = () => {
   const [file, setFile] = useState(null);
   const [date, setDate] = useState(null);
+  const {  user } = useUser();
+  const { userId } = useAuth()
 
   const handleSubmit = async () => {
     if (!file) {
@@ -32,7 +36,7 @@ const UploadForm = () => {
     }
     console.log(file, date);
 
-    setLoading(true);
+    // setLoading(true);
 
     // send the file and workout to the backend
     try {
@@ -43,20 +47,29 @@ const UploadForm = () => {
       // console.log(res.data);
 
       const formData = new FormData();
-      formData.append("exercise_type", selectedWorkout);
+      formData.append("user_id", userId);
+      formData.append("name", user?.fullName);
+      formData.append("email", user?.primaryEmailAddress?.emailAddress);
       formData.append("file", file);
+      formData.append("date", date);
 
       const res = await axios.post(
-        "https://8b6b-2402-3a80-4190-beee-98ef-b30e-7fb3-6cb4.ngrok-free.app/upload-file?exercise_type=" +
-          selectedWorkout,
+        process.env.NEXT_PUBLIC_BASE_URL+"upload/",
+
         formData,
+        {
+          headers:{
+          "Content-Type": "multipart/form-data",
+        }
+      }
       );
       console.log(res.data);
       setResult(res.data);
-      setLoading(false);
+      alert("File uploaded successfully");
+      // setLoading(false);
     } catch (e) {
       console.log(e);
-      setLoading(false);
+      // setLoading(false);
     }
   };
 
