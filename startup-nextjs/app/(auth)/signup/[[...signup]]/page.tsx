@@ -1,3 +1,4 @@
+"use client";
 import { SignUp } from "@clerk/nextjs";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useContext } from "react";
